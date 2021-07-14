@@ -2,13 +2,13 @@ import {map} from "lodash";
 import * as Yup from "yup";
 
 const initialField = (items) => {
-    return map(items.fields, (field) => {
+    return map(items, (field) => {
         return {[field.field_id]: field.field_value}
     })
 }
 
 const validationField = (items) => {
-    return map(items.fields, (field) => {
+    return map(items, (field) => {
         const {field_id, field_mandatory, field_msg} = field
         if (field_mandatory === true) {
             return {[field_id]: Yup.string().required(field_msg)}

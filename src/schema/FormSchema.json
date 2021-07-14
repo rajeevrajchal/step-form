@@ -99,6 +99,98 @@
         "field_options": [],
         "field_type": "switch"
       }
+    ],
+    "sub_field_toggle": "income_statement",
+    "sub_fields": [
+      {
+        "field_id": "allowance",
+        "field_label": "Allowances",
+        "field_value": "",
+        "field_mandatory": true,
+        "field_placeholder": "Allowance",
+        "field_msg": "",
+        "field_options": [],
+        "field_type": "custom",
+        "field_selector_type": "switch",
+        "field_sub_fields": "allowance",
+        "field_sub_fields": [
+          {
+            "field_id": "payg",
+            "field_label": "Type of allowance listed on PAYG summary",
+            "field_value": "",
+            "field_mandatory": true,
+            "field_placeholder": "PAYG",
+            "field_msg": "PAYG Required",
+            "field_options": [
+              {
+                "option_label": "Mandatory",
+                "option_value": "mandatory"
+              },
+              {
+                "option_label": "Optional",
+                "option_value": "optional"
+              }
+            ],
+            "field_type": "select",
+            "field_sub_fields": []
+          },
+          {
+            "field_id": "total_allowance",
+            "field_label": "Total Allowance Received",
+            "field_value": "",
+            "field_mandatory": true,
+            "field_placeholder": "Total Allowance Received",
+            "field_msg": "Total Allowance Required",
+            "field_options": [],
+            "field_type": "number",
+            "field_sub_fields": []
+          }
+        ]
+      },
+      {
+        "field_id": "benefit",
+        "field_label": "Reportable Fringe Benefits",
+        "field_value": "",
+        "field_mandatory": true,
+        "field_placeholder": "Reportable Fringe Benefits",
+        "field_msg": "",
+        "field_options": [],
+        "field_type": "switch",
+        "field_sub_fields": []
+      },
+      {
+        "field_id": "contribution",
+        "field_label": "Reportable Superannuation Contribution",
+        "field_value": "",
+        "field_mandatory": true,
+        "field_placeholder": "Reportable Superannuation Contribution",
+        "field_msg": "",
+        "field_options": [],
+        "field_type": "switch",
+        "field_sub_fields": []
+      },
+      {
+        "field_id": "lumpAB",
+        "field_label": "Lump Sum A or B",
+        "field_value": "",
+        "field_mandatory": true,
+        "field_placeholder": "lumpAB",
+        "field_msg": "",
+        "field_options": [],
+        "field_type": "switch",
+        "field_sub_fields": []
+      },
+      {
+        "field_id": "lumpE",
+        "field_label": "Lump Sum E",
+        "field_value": "",
+        "field_mandatory": true,
+        "field_placeholder": "lumpE",
+        "field_msg": "",
+        "field_options": [],
+        "field_type": "switch",
+        "field_sub_fields": []
+      }
     ]
   }
 ]

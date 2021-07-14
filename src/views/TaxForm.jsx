@@ -36,7 +36,7 @@ const TaxForm = () => {
 
     useEffect(() => {
         const persistStep = localStorage.getItem("FormStep")
-        setFormStep(parseInt(persistStep, 10))
+        setFormStep(persistStep ? parseInt(persistStep, 10): FormStep.Initial)
     },[])
 
     return (

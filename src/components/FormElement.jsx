@@ -2,6 +2,7 @@ import React from 'react';
 import AppInput from "../ui/AppInput";
 import AppSelect from "../ui/AppSelect";
 import AppSwitch from "../ui/AppSwitch";
+import CustomInput from "../ui/CustomInput";
 
 const FormElement = (props) => {
     const {
@@ -10,11 +11,15 @@ const FormElement = (props) => {
             field_placeholder,
             field_type,
             field_options,
-            field_label
+            field_label,
+            field_selector_type
         },
-        formik
+        formik,
+        isSubField,
+        children
     } = props
-    switch (field_type) {
+
+    switch (isSubField ? field_selector_type : field_type) {
         case "text":
             return <AppInput
                 id={field_id}
@@ -61,6 +66,8 @@ const FormElement = (props) => {
                 options={field_options}
                 isInvalid={formik.errors[field_id] ? true : false}
             />
+        case "custom":
+            return <CustomInput ui={children}/>
         default:
             return <p>No Element</p>
     }

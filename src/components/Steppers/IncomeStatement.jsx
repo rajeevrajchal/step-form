@@ -14,18 +14,31 @@ const IncomeStatement = (props) => {
     const incomeStatementField = find(FromField, {page_id: "income_statement"})
 
     const formik = useFormik({
-        initialValues: formikInitial(incomeStatementField),
-        validationSchema: Yup.object(validationLogic(incomeStatementField)),
+        initialValues: formikInitial(incomeStatementField.fields),
+        validationSchema: Yup.object(validationLogic(incomeStatementField.fields)),
         validateOnBlur: true,
         onSubmit: (values) => {
             console.log({values})
             changeStep(FormStep.Complete)
         }
     })
+
+
+    const sub_formik = useFormik({
+        initialValues: formikInitial(incomeStatementField.sub_fields),
+        validationSchema: Yup.object(validationLogic(incomeStatementField.sub_fields)),
+        validateOnBlur: true,
+        onSubmit: (values) => {
+            console.log({values})
+            changeStep(FormStep.Complete)
+        }
+    })
+
+
     return (
         <StepperLayout
             onPrev={() => changeStep(FormStep.SalaryWages)}
-            onNext={() => formik.handleSubmit()}
+            onNext={() => console.log('next function')}
         >
             {
                 map(incomeStatementField.fields, (field) => (
@@ -33,6 +46,18 @@ const IncomeStatement = (props) => {
                         <FormElement field={field} formik={formik}/>
                     </div>
                 ))
+            }
+            {
+                formik.values[incomeStatementField.sub_field_toggle] === true && incomeStatementField.sub_fields.length ? map(incomeStatementField.sub_fields, (sub_field) => (
+                    <div key={sub_field.field_id}>
+                        <FormElement field={sub_field} formik={sub_formik}>
+                            <>
+                                <FormElement field={sub_field} formik={sub_formik}
+                                             isSubField={sub_field.field_sub_fields.length ? true : false}/>
+                            </>
+                        </FormElement>
+                    </div>
+                )) : ''
             }
         </StepperLayout>
     );
