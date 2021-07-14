@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Container,Text} from "@chakra-ui/react"
 import InitialForm from "../components/Steppers/InitialForm";
 import TaxId from "../components/Steppers/TaxId";
@@ -8,10 +8,8 @@ import SalaryWages from "../components/Steppers/SalaryWage";
 import IncomeStatement from "../components/Steppers/IncomeStatement";
 import Complete from "../components/Steppers/Complete";
 
-
 const TaxForm = () => {
     const [step, setFormStep] = useState(FormStep.Initial)
-
     const getFormType = () => {
         switch (step) {
             case FormStep.Initial:
@@ -32,8 +30,14 @@ const TaxForm = () => {
     }
 
     const changeFormStep = (key) => {
+        localStorage.setItem("FormStep", key)
         setFormStep(key)
     }
+
+    useEffect(() => {
+        const persistStep = localStorage.getItem("FormStep")
+        setFormStep(parseInt(persistStep, 10))
+    },[])
 
     return (
         <Container py={20}>

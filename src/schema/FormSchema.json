@@ -1,0 +1,104 @@
+[
+  {
+    "page_label": "Tax ID",
+    "page_id": "tax_id",
+    "fields": [
+      {
+        "field_id": "tax_id",
+        "field_label": "Tax ID",
+        "field_value": "",
+        "field_mandatory": true,
+        "field_placeholder": "Tax ID",
+        "field_msg": "Tax ID Required",
+        "field_options": [
+          {
+            "option_label": "Mandatory",
+            "option_value": "mandatory"
+          },
+          {
+            "option_label": "Optional",
+            "option_value": "optional"
+          }
+        ],
+        "field_type": "select"
+      }
+    ]
+  },
+  {
+    "page_label": "Income Type",
+    "page_id": "income_type",
+    "fields": [
+      {
+        "field_id": "income_type",
+        "field_label": "Income Type",
+        "field_value": "",
+        "field_mandatory": true,
+        "field_placeholder": "Income Type",
+        "field_msg": "Income Type Required",
+        "field_options": [
+          {
+            "option_label": "Mandatory",
+            "option_value": "mandatory"
+          },
+          {
+            "option_label": "Optional",
+            "option_value": "optional"
+          }
+        ],
+        "field_type": "select"
+      }
+    ]
+  },
+  {
+    "page_label": "Salary Wages",
+    "page_id": "salary_wages",
+    "fields": [
+      {
+        "field_id": "employee_abn",
+        "field_label": "Employer's ABN",
+        "field_value": "",
+        "field_mandatory": true,
+        "field_placeholder": "Employer's ABN",
+        "field_msg": "Employer's ABN Required",
+        "field_options": [],
+        "field_type": "text"
+      },
+      {
+        "field_id": "tax_withheld",
+        "field_label": "Tax Withheld",
+        "field_value": "",
+        "field_mandatory": true,
+        "field_placeholder": "Tax Withheld",
+        "field_msg": "Tax Withheld Required",
+        "field_options": [],
+        "field_type": "number"
+      },
+      {
+        "field_id": "gross_payment",
+        "field_label": "Gross Payment (Income)",
+        "field_value": "",
+        "field_mandatory": true,
+        "field_placeholder": "Gross Payment (Income)",
+        "field_msg": "Gross Payment (Income) Required",
+        "field_options": [],
+        "field_type": "number"
+      }
+    ]
+  },
+  {
+    "page_label": "Income Statement",
+    "page_id": "income_statement",
+    "fields": [
+      {
+        "field_id": "income_statement",
+        "field_label": "Are there any more item on your income statement.",
+        "field_value": "",
+        "field_mandatory": true,
+        "field_placeholder": "Add Income Statement",
+        "field_msg": "",
+        "field_options": [],
+        "field_type": "switch"
+      }
+    ]
+  }
+]

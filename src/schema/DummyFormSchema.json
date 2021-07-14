@@ -1,0 +1,40 @@
+[
+  {
+    "page_label": "Tax Return",
+    "fields": [
+      {
+        "field_id": "name",
+        "field_label": "Name",
+        "field_mandatory": true,
+        "field_placeholder": "Enter name",
+        "field_type": "text",
+        "field_value": ""
+      },
+      {
+        "field_id": "contact",
+        "field_label": "Contact",
+        "field_mandatory": true,
+        "field_placeholder": "Enter Your Contact",
+        "field_type": "tel",
+        "field_value": ""
+      },
+      {
+        "field_id": "tax_type",
+        "field_label": "TaxType",
+        "field_value": "",
+        "field_mandatory": true,
+        "field_options": [
+          {
+            "option_label": "Mandatory",
+            "option_value": "mandatory"
+          },
+          {
+            "option_label": "Optional",
+            "option_value": "optional"
+          }
+        ],
+        "field_type": "select"
+      }
+    ]
+  }
+]
