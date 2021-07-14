@@ -13,8 +13,8 @@ const SalaryWages = (props) => {
     const {changeStep} = props
     const salaryWagesField = find(FromField, {page_id: "salary_wages"})
     const formik = useFormik({
-        initialValues: formikInitial(salaryWagesField),
-        validationSchema: Yup.object(validationLogic(salaryWagesField)),
+        initialValues: formikInitial(salaryWagesField.fields),
+        validationSchema: Yup.object(validationLogic(salaryWagesField.fields)),
         validateOnBlur: true,
         onSubmit: (values) => {
             console.log({values})

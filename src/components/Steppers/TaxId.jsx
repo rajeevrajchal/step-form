@@ -15,8 +15,8 @@ const TaxId = (props) => {
     const taxIDFromField = find(FromField, {page_id: "tax_id"})
 
     const formik = useFormik({
-        initialValues: formikInitial(taxIDFromField),
-        validationSchema: Yup.object(validationLogic(taxIDFromField)),
+        initialValues: formikInitial(taxIDFromField.fields),
+        validationSchema: Yup.object(validationLogic(taxIDFromField.fields)),
         validateOnBlur: true,
         onSubmit: (values) => {
             console.log({values})

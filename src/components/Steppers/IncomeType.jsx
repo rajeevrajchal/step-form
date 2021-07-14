@@ -13,8 +13,8 @@ const IncomeType = (props) => {
         const {changeStep} = props
         const incomeTypeField = find(FromField, {page_id: "income_type"})
         const formik = useFormik({
-            initialValues: formikInitial(incomeTypeField),
-            validationSchema: Yup.object(validationLogic(incomeTypeField)),
+            initialValues: formikInitial(incomeTypeField.fields),
+            validationSchema: Yup.object(validationLogic(incomeTypeField.fields)),
             validateOnBlur: true,
             onSubmit: (values) => {
                 console.log({values})
