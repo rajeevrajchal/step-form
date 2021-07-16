@@ -1,0 +1,6 @@
+input {
+  box-sizing: border-box;
+  background-color: lightcoral;
+  height: 20vh;
+  border: 1px solid black;
+}
