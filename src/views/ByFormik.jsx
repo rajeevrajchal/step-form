@@ -2,7 +2,7 @@ import React from "react";
 import { useFormik } from "formik";
 import jsonschema from "../schema/formik-test";
 import RecursiveContainer from "../components/RecursiveFormElement";
-import { Container } from "@chakra-ui/react";
+import { Button, Container, Box } from "@chakra-ui/react";
 const ByFormik = () => {
   const formik = useFormik({
     initialValues: {},
@@ -12,10 +12,12 @@ const ByFormik = () => {
   });
   return (
     <Container>
-      <form onSubmit={formik.handleSubmit}>
+      <Box marginY={10}>
         <RecursiveContainer config={jsonschema} formik={formik} />
-        <button type="submit">Submit</button>
-      </form>
+        <Button colorScheme="blue" onClick={formik.handleSubmit} marginY={4}>
+          Submit
+        </Button>
+      </Box>
     </Container>
   );
 };
