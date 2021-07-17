@@ -89,6 +89,15 @@ const RecursiveContainer = ({ config, formik }) => {
             ) : (
               ""
             )}
+
+            {!defaultActive &&
+            defaultActive === false &&
+            children &&
+            children.length ? (
+              <RecursiveContainer config={children || []} formik={formik} />
+            ) : (
+              ""
+            )}
           </div>
         );
       case "checkbox":
